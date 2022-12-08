@@ -1,0 +1,21 @@
+################################
+##Generated with a lot of love##
+##    with   EasyPython       ##
+##Web site: easycoding.tn     ##
+################################
+import random
+import requests #Please install with PIP: pip install requests
+
+import time
+
+request = None
+
+
+for count in range(3):
+  print('START THE Request')
+  RequestToThingspeak = 'https://api.thingspeak.com/update?api_key=HJ4M19P3YYM0DPN8&field1='
+  RequestToThingspeak +=str((random.randint(0, 60)))
+  request = requests.get(RequestToThingspeak)
+  print('Request sent you got this answer')
+  print(request.text)
+  time.sleep(15)
